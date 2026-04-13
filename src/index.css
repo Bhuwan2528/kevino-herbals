@@ -7,11 +7,11 @@
   --text-heading: #2D1F1B;
   --text-body: #6B4F48;
 
-  --accent-color: #C42949;
-  --accent-hover: #A81F3C;
+  --accent-color: #2d6a4f;
+  --accent-hover: #09422a;
   --accent-light: rgba(196, 41, 73, 0.08);
 
-  --badge-green: #4E7B54;
+  --badge-pink: #c93b5a;
 
   --surface-color: #FFFFFF;
   --border-color: #ebe3d9;
@@ -107,7 +107,7 @@ img {
 
 /* 🔥 PREMIUM BUTTON */
 .btn-primary {
-  background: linear-gradient(135deg, #C42949, #A81F3C);
+  background: linear-gradient(135deg, #2d6a4f, #09422a);
   color: #fff;
   padding: 14px 28px;
   border-radius: var(--radius-sm);
@@ -129,8 +129,8 @@ img {
   width: 120%;
   height: 120%;
   background: rgba(255, 255, 255, 0.2);
-  top: -100%;
-  left: -100%;
+  top: -120%;
+  left: -120%;
   transition: var(--transition-smooth);
 }
 

@@ -28,7 +28,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background-color: var(--badge-green);
+  background-color: var(--badge-pink);
   color: #fff;
   padding: 4px 10px;
   border-radius: var(--radius-full);

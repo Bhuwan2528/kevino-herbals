@@ -10,9 +10,6 @@ const ProductCard = ({ product }) => {
         <img src={product.image} alt={product.title} className="product-image primary-img" />
 
         <div className="product-actions-overlay">
-          <button className="icon-btn wishlist-btn" aria-label="Add to Wishlist">
-            <FiHeart />
-          </button>
           <button className="btn-primary add-to-cart-btn">
             <FiShoppingCart className="btn-icon" /> Add to Cart
           </button>

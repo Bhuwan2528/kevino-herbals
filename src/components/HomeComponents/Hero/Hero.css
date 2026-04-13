@@ -88,7 +88,7 @@
 
 .hero-offer {
   display: inline-block;
-  background-color: var(--badge-green);
+  background-color: var(--badge-pink);
   color: #fff;
   padding: 6px 14px;
   border-radius: var(--radius-full);

@@ -2,19 +2,45 @@ import { useRef } from 'react';
 import './Categories.css';
 
 const categories = [
-  { id: 1, name: 'Face Care', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm5Pxp97hRO2TI0nYharZYOJHw5Ae1v8ns_Q&s' },
-  { id: 2, name: 'Hair Oils', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA6k3x92n3qZxmXm0fJA8BtYC3FfPpt0jfRg&s' },
-  { id: 3, name: 'Wellness Teas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShAuwdEQAJ-NWfE7drDZ6N1l5LjllfZbsHDA&s' },
-  { id: 4, name: 'Body Lotions', image: 'https://m.media-amazon.com/images/I/616QHdyIVkL.jpg' },
-  { id: 5, name: 'Essential Oils', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR17DmkbFqX24OFuqUW0B4w5Bb3CRo7sIi2HQ&s' },
-  { id: 6, name: 'Herbal Soaps', image: 'https://static.vecteezy.com/system/resources/thumbnails/046/124/591/small/stacked-lavender-soap-bars-accompanied-by-lavender-flowers-set-against-a-sparkling-light-backdrop-aromatic-herbal-soap-concept-of-soothing-skincare-natural-wellness-and-fragrant-bath-products-photo.jpeg' },
+  {
+    id: 1,
+    name: 'Pain Relief',
+    image: 'https://png.pngtree.com/thumb_back/fh260/background/20251018/pngtree-knee-anatomy-and-pain-relief-image_19912519.webp'
+  },
+  {
+    id: 2,
+    name: 'Digestive Health',
+    image: 'https://www.shutterstock.com/image-photo/3d-rendered-image-human-digestive-600nw-2505886917.jpg'
+  },
+  {
+    id: 3,
+    name: 'Sexual Wellness',
+    image: 'https://videocdn.cdnpk.net/videos/f34bc4a5-9259-5032-b5c0-269a61405e26/horizontal/thumbnails/large.jpg?semt=ais_hybrid&item_id=6743040&w=740&q=80'
+  },
+  {
+    id: 4,
+    name: 'Women Health',
+    image: 'https://t4.ftcdn.net/jpg/06/38/51/85/360_F_638518528_j3VHw9FNGEUsFoyx03F7uVw3N6lL3kIb.jpg'
+  },
+  {
+    id: 5,
+    name: 'General Wellness',
+    image: 'https://images.pexels.com/photos/32847420/pexels-photo-32847420.jpeg?cs=srgb&dl=pexels-shootsaga-32847420.jpg&fm=jpg'
+  },
+  {
+    id: 6,
+    name: 'Organ Care',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4MNNjvNJqBUH1uBsgxfZ8K4lcskyt-TY4TQ&s'
+  },
+  {
+    id: 7,
+    name: 'Respiratory Care',
+    image: 'https://png.pngtree.com/thumb_back/fw800/background/20250408/pngtree-futuristic-lung-health-concept-a-digital-vision-of-respiratory-care-image_17170073.jpg'
+  }
 ];
 
 const Categories = () => {
   const sliderRef = useRef(null);
-
-  // Auto-scroll logic could be added here if it needs to be purely JS based, 
-  // but CSS animations or standard scrolling is better for UX. We will use CSS hide-scrollbar & snap.
 
   return (
     <section className="categories-section">
@@ -30,7 +56,8 @@ const Categories = () => {
               <h3 className="category-name">{category.name}</h3>
             </div>
           ))}
-          {/* Duplicate for infinite feel visual */}
+
+          {/* duplicate for smooth loop */}
           {categories.map((category) => (
             <div key={`${category.id}-dup`} className="category-card" aria-hidden="true">
               <div className="category-image-wrapper">

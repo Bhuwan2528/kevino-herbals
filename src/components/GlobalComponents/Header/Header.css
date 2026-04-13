@@ -1,6 +1,6 @@
 /* 🔥 TOP STRIP */
 .top-strip {
-  background: linear-gradient(90deg, #C42949, #A81F3C);
+  background: linear-gradient(135deg, #075833, #2d6a4f, #075833);
   color: #fff;
   text-align: center;
   padding: 10px 0;
@@ -158,13 +158,13 @@
   justify-content: center;
   gap: 28px;
   padding: 14px 0;
-  background: #111;
+  background: #573211;
 }
 
 .navbar a {
   color: #fff;
   position: relative;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .navbar a::after {

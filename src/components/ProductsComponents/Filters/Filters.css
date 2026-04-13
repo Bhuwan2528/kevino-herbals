@@ -78,15 +78,15 @@
   transition: var(--transition-smooth);
 }
 
-.custom-radio input:checked ~ .radio-mark {
-  border-color: var(--badge-green);
+.custom-radio input:checked~.radio-mark {
+  border-color: var(--badge-pink);
 }
 
-.custom-radio input:checked ~ .radio-mark::after {
+.custom-radio input:checked~.radio-mark::after {
   content: "";
   width: 10px;
   height: 10px;
-  background-color: var(--badge-green);
+  background-color: var(--badge-pink);
   border-radius: 50%;
 }
 
@@ -96,7 +96,8 @@
   transition: var(--transition-smooth);
 }
 
-.custom-radio:hover .radio-label, .custom-radio input:checked ~ .radio-label {
+.custom-radio:hover .radio-label,
+.custom-radio input:checked~.radio-label {
   color: var(--text-heading);
   font-weight: 500;
 }
@@ -125,7 +126,7 @@
 .slider-track {
   position: absolute;
   height: 100%;
-  background-color: var(--badge-green);
+  background-color: var(--badge-pink);
   border-radius: 5px;
   z-index: 1;
 }
@@ -146,10 +147,10 @@
   width: 18px;
   height: 18px;
   background-color: #fff;
-  border: 2px solid var(--badge-green);
+  border: 2px solid var(--badge-pink);
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .multi-range-slider input[type="range"]::-moz-range-thumb {
@@ -157,10 +158,10 @@
   width: 18px;
   height: 18px;
   background-color: #fff;
-  border: 2px solid var(--badge-green);
+  border: 2px solid var(--badge-pink);
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-apply-btn {
@@ -192,7 +193,7 @@
     display: block;
     pointer-events: none;
   }
-  
+
   .filters-overlay.active {
     pointer-events: all;
   }

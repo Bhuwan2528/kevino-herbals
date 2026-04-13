@@ -1,5 +1,6 @@
 .site-footer {
-  background-color: #FDFBFC; /* slightly cooler/lighter tone to differentiate bottom space */
+  background-color: #FDFBFC;
+  /* slightly cooler/lighter tone to differentiate bottom space */
 }
 
 .main-footer {
@@ -20,7 +21,7 @@
 }
 
 .footer-logo .logo-icon-wrapper {
-  background-color: var(--badge-green);
+  background-color: var(--badge-pink);
   color: #fff;
   width: 36px;
   height: 36px;
@@ -181,6 +182,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .footer-bottom-container {
     flex-direction: column;
     text-align: center;
