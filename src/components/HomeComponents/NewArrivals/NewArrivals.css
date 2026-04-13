@@ -1,0 +1,66 @@
+.new-arrivals-section {
+  background-color: var(--surface-color); /* Slight difference in background */
+}
+
+/* Inherit from BestSellers for grid logic, assuming they are both standard structures, 
+   but since this is standard CSS we must redefine or rely on Bestseller.css if it's imported globally.
+   To be safe, let's redefine the grid rules here as requested separate files. */
+
+.new-arrivals-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.new-arrivals-section .section-title {
+  font-size: 2.2rem;
+  color: var(--text-heading);
+  margin-bottom: 0;
+}
+
+.new-arrivals-section .view-all-link {
+  font-weight: 500;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.new-arrivals-section .view-all-link::after {
+  content: '→';
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.new-arrivals-section .view-all-link:hover::after {
+  transform: translateX(4px);
+}
+
+.new-arrivals-section .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .new-arrivals-section .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .new-arrivals-section .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .new-arrivals-section .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

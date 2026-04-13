@@ -1,0 +1,79 @@
+.testimonial-section {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #fdfbf8, #f3ede7);
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* MARQUEE WRAPPER */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* TRACK */
+.track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+/* REVERSE ROW */
+.marquee.reverse .track {
+  animation-direction: reverse;
+}
+
+/* 🔥 SMOOTH INFINITE */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CARD */
+.card {
+  min-width: 280px;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: 0.4s ease;
+}
+
+/* TOP */
+.card-top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.card-top img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* TEXT */
+.text {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: var(--text-body);
+}
+
+/* STARS */
+.stars {
+  color: gold;
+  font-size: 0.8rem;
+}

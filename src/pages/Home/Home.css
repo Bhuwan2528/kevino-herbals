@@ -1,0 +1,18 @@
+.home-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Base spacing adjustments for sections when stacked */
+.home-page main > section {
+  /* Inherit global section padding padding: 80px 0; */
+}
+
+/* Optional: remove padding if we want certain sections to touch */
+.home-page .categories-section {
+  padding-bottom: 40px;
+}
+
+.home-page .bestsellers-section {
+  padding-top: 40px;
+}

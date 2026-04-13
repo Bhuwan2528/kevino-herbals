@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  /* 🎨 COLORS (enhanced contrast + richness) */
+  --bg-color: #FDFBF8;
+  --bg-alt: #fff8f0;
+  --text-heading: #2D1F1B;
+  --text-body: #6B4F48;
+
+  --accent-color: #C42949;
+  --accent-hover: #A81F3C;
+  --accent-light: rgba(196, 41, 73, 0.08);
+
+  --badge-green: #4E7B54;
+
+  --surface-color: #FFFFFF;
+  --border-color: #ebe3d9;
+
+  /* ✨ NEW: depth colors */
+  --shadow-color: rgba(45, 31, 27, 0.08);
+  --shadow-strong: rgba(45, 31, 27, 0.15);
+
+  /* 🅰️ TYPOGRAPHY */
+  --font-heading: "PT Sans", sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* 🌫 SHADOWS (more premium) */
+  --shadow-soft: 0 6px 18px var(--shadow-color);
+  --shadow-hover: 0 14px 32px var(--shadow-strong);
+
+  /* 🔵 RADIUS */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* ⚡ TRANSITIONS */
+  --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+html,
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, #FDFBF8 0%, #F6F1EB 100%);
+  color: var(--text-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* HEADINGS (more luxury feel) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+/* BUTTON */
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+/* LIST */
+ul {
+  list-style: none;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 🔥 PREMIUM BUTTON */
+.btn-primary {
+  background: linear-gradient(135deg, #C42949, #A81F3C);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow effect */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.2);
+  top: -100%;
+  left: -100%;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover::after {
+  top: 0;
+  left: 0;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+/* 🧊 CARD (IMPORTANT — feel yahin se aayega) */
+.card {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ✨ GLASS EFFECT (optional sections) */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 📦 SECTIONS */
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* subtle background variation */
+section:nth-child(even) {
+  background: var(--bg-alt);
+}
+
+/* 🧠 SECTION TITLE */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--text-body);
+  opacity: 0.8;
+}
+
+/* ✨ HOVER IMAGE ZOOM */
+.image-hover {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.image-hover img {
+  transition: transform 0.5s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.08);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+}
