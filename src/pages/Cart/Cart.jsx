@@ -27,24 +27,32 @@ const Cart = () => {
                         {products.slice(0, 3).map((item) => (
                             <div key={item.id} className="cart-item-row">
 
-                                <img src={item.image} alt={item.title} className="cart-item-img" />
+                                {/* TOP */}
+                                <div className="cart-item-top">
+                                    <img src={item.image} alt={item.title} className="cart-item-img" />
 
-                                <div className="cart-item-details">
-                                    <h3 className="cart-item-title">{item.title}</h3>
-                                    <span className="cart-item-price">₹{item.price}</span>
+                                    <div className="cart-item-details">
+                                        <h3 className="cart-item-title">{item.title}</h3>
+                                        <span className="cart-item-price">₹{item.price}</span>
+                                    </div>
                                 </div>
 
-                                <div className="cart-qty-box">
-                                    <button className="cart-qty-btn">-</button>
-                                    <span className="cart-qty-value">{1}</span>
-                                    <button className="cart-qty-btn">+</button>
-                                </div>
+                                {/* BOTTOM */}
+                                <div className="cart-item-bottom">
 
-                                <div className="cart-item-actions">
-                                    <span className="cart-item-total">₹{item.price}</span>
-                                    <button className="cart-remove-btn">
-                                        <FiTrash2 /> Remove
-                                    </button>
+                                    <div className="cart-qty-box">
+                                        <button className="cart-qty-btn">-</button>
+                                        <span className="cart-qty-value">1</span>
+                                        <button className="cart-qty-btn">+</button>
+                                    </div>
+
+                                    <div className="cart-item-actions">
+                                        <span className="cart-item-total">₹{item.price}</span>
+                                        <button className="cart-remove-btn">
+                                            <FiTrash2 /> Remove
+                                        </button>
+                                    </div>
+
                                 </div>
 
                             </div>

@@ -1,70 +1,150 @@
+import { useState } from "react";
 import "./Orders.css";
+import Header from "../../components/GlobalComponents/Header/Header";
+import Footer from "../../components/GlobalComponents/Footer/Footer";
+import prod1 from "../../assets/products/flexTablet.PNG";
+import prod2 from "../../assets/products/gesicOil.PNG";
+import prod3 from "../../assets/products/lax-tablet.PNG";
 
-const orders = [
-  {
-    id: "#ORD1234",
-    title: "Herbal Face Wash",
-    image: "https://via.placeholder.com/100",
-    price: 299,
-    status: "Delivered",
-    date: "12 April 2026"
-  },
-  {
-    id: "#ORD5678",
-    title: "Hair Growth Oil",
-    image: "https://via.placeholder.com/100",
-    price: 499,
-    status: "Out for Delivery",
-    date: "14 April 2026"
-  },
-  {
-    id: "#ORD9999",
-    title: "Vitamin Tablets",
-    image: "https://via.placeholder.com/100",
-    price: 199,
-    status: "Cancelled",
-    date: "10 April 2026"
-  }
+const initialOrders = [
+    {
+        id: "#ORD123",
+        title: "Kevino Flex Tablet",
+        image: prod1,
+        qty: 1,
+        price: 299,
+        payment: "Paid",
+        status: "Delivered",
+        orderedOn: "10 April 2026",
+        deliveredOn: "12 April 2026",
+        refund: false
+    },
+    {
+        id: "#ORD456",
+        title: "Kevino Gesic Pain Oil",
+        image: prod2,
+        qty: 2,
+        price: 499,
+        payment: "COD",
+        status: "Out for Delivery",
+        orderedOn: "13 April 2026",
+        deliveredOn: null,
+        refund: false
+    },
+    {
+        id: "#ORD789",
+        title: "Kevino Lax Tablet",
+        image: prod3,
+        qty: 1,
+        price: 199,
+        payment: "Paid",
+        status: "Cancelled",
+        orderedOn: "8 April 2026",
+        deliveredOn: null,
+        refund: true
+    }
 ];
 
 export default function Orders() {
-  return (
-    <section className="orders-wrapper container">
+    const [orders, setOrders] = useState(initialOrders);
+    const [confirmId, setConfirmId] = useState(null);
 
-      <h1 className="orders-heading">My Orders</h1>
+    const cancelOrder = (id) => {
+        setOrders((prev) =>
+            prev.map((o) =>
+                o.id === id
+                    ? { ...o, status: "Cancelled", refund: true }
+                    : o
+            )
+        );
+        setConfirmId(null);
+    };
 
-      <div className="orders-list">
-        {orders.map((order) => (
-          <div className="order-card" key={order.id}>
+    return (
+        <>
+            <Header />
+            <section className="ord-wrapper container">
 
-            {/* LEFT */}
-            <div className="order-left">
-              <img src={order.image} alt={order.title} />
-            </div>
+                <h1 className="ord-heading">My Orders</h1>
 
-            {/* MIDDLE */}
-            <div className="order-middle">
-              <h3>{order.title}</h3>
-              <p className="order-id">{order.id}</p>
-              <p className="order-date">{order.date}</p>
-            </div>
+                <div className="ord-table">
 
-            {/* RIGHT */}
-            <div className="order-right">
+                    {/* HEADER */}
+                    <div className="ord-row ord-head">
+                        <span>Product</span>
+                        <span>Qty</span>
+                        <span>Price</span>
+                        <span>Payment</span>
+                        <span>Status</span>
+                        <span>Action</span>
+                    </div>
 
-              <div className={`order-status ${order.status.replaceAll(" ", "-").toLowerCase()}`}>
-                <span className="status-dot"></span>
-                {order.status}
-              </div>
+                    {/* ROWS */}
+                    {orders.map((o) => (
+                        <div className="ord-row" key={o.id}>
 
-              <p className="order-price">₹{order.price}</p>
+                            {/* PRODUCT */}
+                            <div className="ord-product">
+                                <img src={o.image} alt={o.title} />
+                                <div>
+                                    <p>{o.title}</p>
+                                    <small>{o.id}</small>
+                                </div>
+                            </div>
 
-            </div>
+                            <span>{o.qty}</span>
+                            <span>₹{o.price}</span>
+                            <span>{o.payment}</span>
 
-          </div>
-        ))}
-      </div>
+                            {/* STATUS */}
+                            <div className="ord-status-box">
+                                <div className={`ord-status ${o.status.replaceAll(" ", "-").toLowerCase()}`}>
+                                    <span className="dot"></span>
+                                    {o.status}
+                                </div>
 
-    </section>
-  );
+                                <small>
+                                    Ordered: {o.orderedOn}
+                                    <br />
+                                    {o.deliveredOn
+                                        ? `Delivered: ${o.deliveredOn}`
+                                        : "Expected soon"}
+                                    {o.refund && <span className="refund"> • Refund Initiated</span>}
+                                </small>
+                            </div>
+
+                            {/* ACTION */}
+                            <div>
+                                {o.status !== "Cancelled" && (
+                                    <button
+                                        className="ord-cancel-btn"
+                                        onClick={() => setConfirmId(o.id)}
+                                    >
+                                        Cancel
+                                    </button>
+                                )}
+                            </div>
+
+                        </div>
+                    ))}
+
+                </div>
+
+                {/* CONFIRM MODAL */}
+                {confirmId && (
+                    <div className="ord-modal">
+                        <div className="ord-modal-box">
+                            <p>Do you want to cancel this order?</p>
+                            <div>
+                                <button onClick={() => cancelOrder(confirmId)}>Yes</button>
+                                <button onClick={() => setConfirmId(null)}>No</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+            </section>
+            <Footer />
+        </>
+    );
 }

@@ -12,8 +12,8 @@ import logo from '../../../assets/logo.png'
 const messages = [
   "🌿 100% Natural Herbal Products Made with Love",
   "🚚 Free Shipping on Order Of Above ₹999",
-  "🔥 Flat 10% OFF on New Arrivals For New Customers",
-  "💚 Trusted by 10,000+ Customers and Becoming best in Community"
+  "🔥 Flat 10% OFF For New Customers",
+  "💚 Trusted by 10,000+ Customers & Growing Fast"
 ];
 
 const Header = () => {
@@ -35,9 +35,11 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      {/* ✅ TOP STRIP (UNCHANGED) */}
+      {/* TOP STRIP SAME */}
       <div className="top-strip">
         <span key={index} className="strip-text">
           {messages[index]}
@@ -48,12 +50,17 @@ const Header = () => {
 
         <div className="header-inner container">
 
-          {/* ✅ LOGO */}
+          {/* ✅ MOBILE MENU BTN */}
+          <div className="mobile-menu-btn" onClick={() => setMenuOpen(true)}>
+            ☰
+          </div>
+
+          {/* LOGO */}
           <Link to="/" className="header-logo">
             <img src={logo} alt="logo" />
           </Link>
 
-          {/* ✅ NAV LINKS */}
+          {/* NAV (DESKTOP ONLY) */}
           <nav className="header-nav">
             <Link to="/">Home</Link>
             <Link to="/story">Our Story</Link>
@@ -63,20 +70,16 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </nav>
 
-          {/* ✅ SEARCH BAR */}
-          <div className="header-search">
+          {/* SEARCH (DESKTOP) */}
+          <div className="header-search desktop-search">
             <FiSearch />
             <input placeholder="Search herbal products..." />
           </div>
 
-          {/* ✅ ACTIONS */}
+          {/* ACTIONS */}
           <div className="header-actions">
-            <Link to="/profile">
-              <FiUser />
-            </Link>
-            <Link to="/orders">
-              <RiBox3Line />
-            </Link>
+            <Link to="/profile"><FiUser /></Link>
+            <Link to="/orders"><RiBox3Line /></Link>
             <Link to="/cart" className="cart-icon">
               <FiShoppingCart />
               <span>2</span>
@@ -85,7 +88,33 @@ const Header = () => {
 
         </div>
 
+        {/* ✅ MOBILE SEARCH BAR */}
+        <div className="mobile-search">
+          <FiSearch />
+          <input placeholder="Search herbal products..." />
+        </div>
+
       </header>
+
+      {/* ✅ SIDEBAR */}
+      <div className={`sidebar ${menuOpen ? "open" : ""}`}>
+        <div className="sidebar-header">
+          <h3>Menu</h3>
+          <span onClick={() => setMenuOpen(false)}>✕</span>
+        </div>
+
+        <nav className="sidebar-nav">
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/story" onClick={() => setMenuOpen(false)}>Our Story</Link>
+          <Link to="/products" onClick={() => setMenuOpen(false)}>New Arrivals</Link>
+          <Link to="/products" onClick={() => setMenuOpen(false)}>Our Products</Link>
+          <Link to="/products" onClick={() => setMenuOpen(false)}>Best Sellers</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link>
+        </nav>
+      </div>
+
+      {/* OVERLAY */}
+      {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
     </>
   );
 };
