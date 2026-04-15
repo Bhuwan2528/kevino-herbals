@@ -57,9 +57,9 @@ const Header = () => {
           <nav className="header-nav">
             <Link to="/">Home</Link>
             <Link to="/story">Our Story</Link>
-            <Link to="/new">New Arrivals</Link>
+            <Link to="/products">New Arrivals</Link>
             <Link to="/products">Our Products</Link>
-            <Link to="/bestseller">Best Sellers</Link>
+            <Link to="/products">Best Sellers</Link>
             <Link to="/contact">Contact Us</Link>
           </nav>
 
