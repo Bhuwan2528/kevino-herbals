@@ -22,7 +22,7 @@ const Products = () => {
     setSearchTerm('');
     setSelectedCategory('All');
     setSelectedSubCategory('All');
-    setPriceRange([0, 50]);
+    setPriceRange([0, 5000]);
     setSortOption('default');
   };
 
@@ -76,7 +76,7 @@ const Products = () => {
         <Banner
           title="Our Products"
           subtitle="Explore our wide range of organic, pure, and healthy herbal products curated directly from nature."
-          bgImage="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=2000"
+          bgImage="https://media.istockphoto.com/id/1320934166/photo/cosmetic-skin-care-products-on-green-leaves.jpg?s=612x612&w=0&k=20&c=X4pwnTaBzXHDOGZlcdJdlKxmYd__61xboHVIiR5JMIk="
         />
 
         <div className="container products-container">

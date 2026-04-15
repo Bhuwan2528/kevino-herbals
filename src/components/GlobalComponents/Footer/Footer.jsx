@@ -3,23 +3,21 @@ import { BiShoppingBag } from 'react-icons/bi';
 import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
 import TrustStrip from './TrustStrip';
 import './Footer.css';
+import logo from '../../../assets/logo.png'
 
 const Footer = () => {
   return (
     <footer className="site-footer">
       <TrustStrip />
-      
+
       <div className="main-footer">
         <div className="container">
           <div className="footer-grid">
-            
+
             {/* Brand Section */}
             <div className="footer-col brand-col">
               <Link to="/" className="footer-logo">
-                <div className="logo-icon-wrapper">
-                  <BiShoppingBag className="logo-icon" />
-                </div>
-                <span className="logo-text">Only Herbs</span>
+                <img src={logo} alt="" />
               </Link>
               <p className="footer-desc">
                 Bringing the ancient wisdom of Ayurveda to modern skincare and wellness. 100% natural, ethically sourced, and mindfully crafted.

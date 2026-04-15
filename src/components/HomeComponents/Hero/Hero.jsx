@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
 import './Hero.css';
+import slide1 from '../../../assets/slides/slide1.png'
+import slide2 from '../../../assets/slides/slide2.png'
+import slide3 from '../../../assets/slides/slide3.png'
+import slide4 from '../../../assets/slides/slide4.png'
+import slide5 from '../../../assets/slides/slide5.png'
+import slide6 from '../../../assets/slides/slide6.png'
+import slide7 from '../../../assets/slides/slide7.png'
+import slide8 from '../../../assets/slides/slide8.png'
 
 const slides = [
   {
@@ -36,6 +44,8 @@ const slides = [
   },
 ];
 
+const slidesImg = [slide1, slide2, slide4, slide6, slide5, slide6, slide7, slide8]
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -48,12 +58,12 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
-      {slides.map((slide, index) => (
+      {slidesImg.map((slide, index) => (
         <div
-          key={slide.id}
+          key={slide.index}
           className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
         >
-          <div className="hero-bg" style={{ backgroundImage: `url(${slide.image})` }}></div>
+          <div className="hero-bg" style={{ backgroundImage: `url(${slide})` }}></div>
           <div className="hero-overlay"></div>
 
           <div className="container hero-content-container">

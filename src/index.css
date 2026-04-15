@@ -4,14 +4,14 @@
   /* 🎨 COLORS (enhanced contrast + richness) */
   --bg-color: #FDFBF8;
   --bg-alt: #fff8f0;
-  --text-heading: #2D1F1B;
+  --text-heading: #241714;
   --text-body: #6B4F48;
 
   --accent-color: #2d6a4f;
   --accent-hover: #09422a;
   --accent-light: rgba(196, 41, 73, 0.08);
 
-  --badge-pink: #c93b5a;
+  --badge-pink: #a35414;
 
   --surface-color: #FFFFFF;
   --border-color: #ebe3d9;
@@ -107,7 +107,7 @@ img {
 
 /* 🔥 PREMIUM BUTTON */
 .btn-primary {
-  background: linear-gradient(135deg, #2d6a4f, #09422a);
+  background: linear-gradient(135deg, #044125, #216444, #044125);
   color: #fff;
   padding: 14px 28px;
   border-radius: var(--radius-sm);
@@ -122,26 +122,17 @@ img {
   overflow: hidden;
 }
 
-/* glow effect */
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: rgba(255, 255, 255, 0.2);
-  top: -120%;
-  left: -120%;
-  transition: var(--transition-smooth);
-}
-
-.btn-primary:hover::after {
-  top: 0;
-  left: 0;
-}
-
 .btn-primary:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 8px 10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(6, 78, 51, 0.3);
+}
+
+/* click feel */
+.btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* 🧊 CARD (IMPORTANT — feel yahin se aayega) */

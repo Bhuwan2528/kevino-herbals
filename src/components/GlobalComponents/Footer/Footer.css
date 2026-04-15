@@ -20,23 +20,8 @@
   margin-bottom: 20px;
 }
 
-.footer-logo .logo-icon-wrapper {
-  background-color: var(--badge-pink);
-  color: #fff;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-}
-
-.footer-logo .logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-heading);
+.footer-logo img {
+  width: 110px;
 }
 
 .footer-desc {

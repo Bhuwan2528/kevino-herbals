@@ -1,16 +1,29 @@
+import { useNavigate } from 'react-router-dom';
 import { FiHeart, FiShoppingCart } from 'react-icons/fi';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/product-detail`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    /* Cart logic will go here */
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
       <div className="product-image-container">
         {product.badge && <span className="product-badge">{product.badge}</span>}
 
         <img src={product.image} alt={product.title} className="product-image primary-img" />
 
         <div className="product-actions-overlay">
-          <button className="btn-primary add-to-cart-btn">
+          <button className="btn-primary add-to-cart-btn" onClick={handleAddToCart}>
             <FiShoppingCart className="btn-icon" /> Add to Cart
           </button>
         </div>

@@ -1,3 +1,25 @@
+import ashvin from '../assets/products/ashvin-capsule.png'
+import easyFresh from '../assets/products/easy-fresh.png'
+import edr from '../assets/products/edr-capsule.png'
+import flexTablet from '../assets/products/flexTablet.png'
+import fort from '../assets/products/fort-syrup.png'
+import gesicOil from '../assets/products/gesicOil.png'
+import koff from '../assets/products/koff-syrup.png'
+import lax from '../assets/products/lax-tablet.png'
+import liv from '../assets/products/liv-din-syrup.png'
+import maxx from '../assets/products/max-gold.png'
+import mind from '../assets/products/mind-syrup.png'
+import nvr from '../assets/products/nvr-capsule.png'
+import pros from '../assets/products/pros-syrup.png'
+import salmon from '../assets/products/salmon-oil.png'
+import sperm from '../assets/products/sperm-gold.png'
+import systrez from '../assets/products/systrez-capsule.png'
+import thyro from '../assets/products/thyro-syrup.png'
+import tone from '../assets/products/tone-syrup.png'
+import urino from '../assets/products/urino-syrup.png'
+import zaiqup from '../assets/products/zaiqup-syrup.png'
+import zyme from '../assets/products/zyme-syrup.png'
+
 export const categories = [
   'All',
   'Pain Relief',
@@ -30,10 +52,41 @@ export const products = [
     oldPrice: 399,
     rating: 4.6,
     reviews: 120,
-    image: 'https://images.unsplash.com/photo-1580281657527-47f249e0f4df?q=80&w=800',
+    image: flexTablet,
     badge: 'Best Seller',
     tags: ['Joint Pain', 'Ayurvedic'],
-    isBestSeller: true
+    isBestSeller: true,
+    images: [
+      flexTablet,
+      "https://images.unsplash.com/photo-1588774069410-84ae30757c8e?q=80&w=800",
+      "https://images.unsplash.com/photo-1588774069410-84ae30757c8e?q=80&w=800"
+    ],
+    description:
+      "Kevino Flex Tablet is a powerful Ayurvedic formulation designed to relieve joint pain, improve flexibility, and strengthen bones naturally. Made with clinically tested herbs, it provides long-term relief without side effects.",
+    variants: ["60 Tablets", "120 Tablets", "180 Tablets"],
+    details: {
+      Brand: "Kevino Herbals",
+      Form: "Tablet",
+      Usage: "Take 1-2 tablets twice daily after meals",
+      Ingredients: "Ashwagandha, Shallaki, Guggul, Rasna",
+      Packaging: "Bottle",
+      ShelfLife: "24 Months",
+      Country: "India"
+    },
+    faqs: [
+      {
+        question: "Is this product safe?",
+        answer: "Yes, it is made from 100% natural Ayurvedic ingredients and is safe for regular use."
+      },
+      {
+        question: "How long should I use it?",
+        answer: "For best results, use consistently for at least 2-3 months."
+      },
+      {
+        question: "Are there any side effects?",
+        answer: "No known side effects when taken as directed."
+      }
+    ]
   },
   {
     id: 2,
@@ -44,7 +97,7 @@ export const products = [
     oldPrice: 249,
     rating: 4.5,
     reviews: 98,
-    image: 'https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=800',
+    image: gesicOil,
     badge: 'Hot',
     tags: ['Pain Relief'],
     isBestSeller: true
@@ -58,7 +111,7 @@ export const products = [
     oldPrice: null,
     rating: 4.4,
     reviews: 76,
-    image: 'https://images.unsplash.com/photo-1588776814546-ec7e9d5c61c2?q=80&w=800',
+    image: lax,
     badge: null,
     tags: ['Constipation']
   },
@@ -71,7 +124,7 @@ export const products = [
     oldPrice: 280,
     rating: 4.7,
     reviews: 140,
-    image: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800',
+    image: zyme,
     badge: 'Popular',
     tags: ['Digestion'],
     isBestSeller: true
@@ -85,7 +138,7 @@ export const products = [
     oldPrice: null,
     rating: 4.3,
     reviews: 65,
-    image: 'https://images.unsplash.com/photo-1615485737651-2c9f07e0f0d9?q=80&w=800',
+    image: zaiqup,
     badge: null,
     tags: ['Digestive']
   },
@@ -98,7 +151,7 @@ export const products = [
     oldPrice: 220,
     rating: 4.5,
     reviews: 88,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: easyFresh,
     badge: 'Natural',
     tags: ['Gut Health']
   },
@@ -111,7 +164,7 @@ export const products = [
     oldPrice: null,
     rating: 4.4,
     reviews: 72,
-    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800',
+    image: ashvin,
     badge: null,
     tags: ['Piles']
   },
@@ -124,7 +177,7 @@ export const products = [
     oldPrice: 599,
     rating: 4.8,
     reviews: 210,
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800',
+    image: salmon,
     badge: 'Premium',
     tags: ['Omega 3'],
     isBestSeller: true
@@ -138,7 +191,7 @@ export const products = [
     oldPrice: 1099,
     rating: 4.7,
     reviews: 190,
-    image: 'https://images.unsplash.com/photo-1588774069410-84ae30757c8e?q=80&w=800',
+    image: maxx,
     badge: 'Top Rated',
     tags: ['Performance'],
     isBestSeller: true
@@ -152,7 +205,7 @@ export const products = [
     oldPrice: null,
     rating: 4.6,
     reviews: 150,
-    image: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800',
+    image: sperm,
     badge: null,
     tags: ['Fertility']
   },
@@ -165,7 +218,7 @@ export const products = [
     oldPrice: 1200,
     rating: 4.7,
     reviews: 175,
-    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800',
+    image: edr,
     badge: 'Hot',
     tags: ['ED']
   },
@@ -178,7 +231,7 @@ export const products = [
     oldPrice: 300,
     rating: 4.5,
     reviews: 110,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: fort,
     badge: 'Immunity',
     tags: ['Energy']
   },
@@ -191,7 +244,7 @@ export const products = [
     oldPrice: null,
     rating: 4.6,
     reviews: 95,
-    image: 'https://images.unsplash.com/photo-1581090700227-4c4c2c74d9c2?q=80&w=800',
+    image: mind,
     badge: null,
     tags: ['Memory']
   },
@@ -204,7 +257,7 @@ export const products = [
     oldPrice: 400,
     rating: 4.5,
     reviews: 85,
-    image: 'https://images.unsplash.com/photo-1580281657527-47f249e0f4df?q=80&w=800',
+    image: nvr,
     badge: null,
     tags: ['Stress Relief']
   },
@@ -217,7 +270,7 @@ export const products = [
     oldPrice: 350,
     rating: 4.4,
     reviews: 70,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: tone,
     badge: null,
     tags: ['Women']
   },
@@ -230,7 +283,7 @@ export const products = [
     oldPrice: 550,
     rating: 4.6,
     reviews: 120,
-    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800',
+    image: systrez,
     badge: 'Recommended',
     tags: ['Hormones']
   },
@@ -243,7 +296,7 @@ export const products = [
     oldPrice: null,
     rating: 4.5,
     reviews: 90,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: liv,
     badge: null,
     tags: ['Liver']
   },
@@ -256,7 +309,7 @@ export const products = [
     oldPrice: 300,
     rating: 4.4,
     reviews: 80,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: urino,
     badge: null,
     tags: ['Kidney']
   },
@@ -269,7 +322,7 @@ export const products = [
     oldPrice: 420,
     rating: 4.5,
     reviews: 60,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: pros,
     badge: null,
     tags: ['Prostate']
   },
@@ -282,7 +335,7 @@ export const products = [
     oldPrice: 380,
     rating: 4.6,
     reviews: 95,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: thyro,
     badge: null,
     tags: ['Thyroid']
   },
@@ -295,7 +348,7 @@ export const products = [
     oldPrice: 240,
     rating: 4.3,
     reviews: 110,
-    image: 'https://images.unsplash.com/photo-1588771930295-1b8f07b6e0f4?q=80&w=800',
+    image: koff,
     badge: 'Seasonal',
     tags: ['Cold']
   }

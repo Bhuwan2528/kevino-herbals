@@ -1,0 +1,144 @@
+.orders-wrapper {
+  padding: 60px 0;
+}
+
+.orders-heading {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+/* LIST */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CARD */
+.order-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 18px;
+
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-soft);
+
+  transition: var(--transition-smooth);
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* LEFT IMAGE */
+.order-left img {
+  width: 80px;
+  border-radius: var(--radius-sm);
+}
+
+/* MIDDLE */
+.order-middle {
+  flex: 1;
+}
+
+.order-middle h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.order-id {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  color: var(--text-body);
+}
+
+/* RIGHT */
+.order-right {
+  text-align: right;
+}
+
+.order-price {
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* STATUS */
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+/* DOT */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* STATUS COLORS */
+
+/* Delivered */
+.order-status.delivered {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+.order-status.delivered .status-dot {
+  background: #16a34a;
+}
+
+/* Out for Delivery */
+.order-status.out-for-delivery {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+.order-status.out-for-delivery .status-dot {
+  background: #2563eb;
+}
+
+/* Initiated */
+.order-status.order-initiated {
+  background: rgba(234, 179, 8, 0.15);
+  color: #ca8a04;
+}
+.order-status.order-initiated .status-dot {
+  background: #ca8a04;
+}
+
+/* Cancelled */
+.order-status.cancelled {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+.order-status.cancelled .status-dot {
+  background: #dc2626;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-right {
+    text-align: left;
+  }
+}
